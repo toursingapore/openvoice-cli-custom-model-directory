@@ -6,8 +6,8 @@ from openvoice_cli.api import ToneColorConverter
 import openvoice_cli.se_extractor as se_extractor
 import glob
 
-def tune_one(input_file,ref_file,output_file,device):
-    current_dir = os.path.dirname(os.path.realpath(__file__))
+def tune_one(input_file,ref_file,output_file,device,current_dir):
+    #current_dir = os.path.dirname(os.path.realpath(__file__))
     checkpoints_dir = os.path.join(current_dir, 'checkpoints')
     ckpt_converter = os.path.join(checkpoints_dir, 'converter')
 
