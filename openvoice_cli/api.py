@@ -30,7 +30,7 @@ class OpenVoiceBaseClass(object):
         self.hps = hps
         self.device = device
 
-    @st.cache_resource()
+    @st.cache(allow_output_mutation=True)
     def load_ckpt(self, ckpt_path):
         checkpoint_dict = torch.load(ckpt_path, map_location=torch.device(self.device))
         a, b = self.model.load_state_dict(checkpoint_dict['model'], strict=False)
